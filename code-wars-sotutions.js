@@ -29,10 +29,7 @@ function likes(names) {
     if(names.length === 0){return "no one likes this"}
     else if(names.length===1){return `${names[0]} likes this`}
     else if(names.length===2){return `${names[0]} and ${names[1]} like this`}
-    else if(names.length===3){
-        let last = names.pop()
-        return `${names.join(', ')} and ${last} like this`
-    }
+    else if(names.length===3){return `${names[0]}, ${names[1]} and ${names[3]} like this`}
     else{return `${names[0]}, ${names[1]} and ${names.length-2} others like this`}
 }
 
@@ -43,8 +40,25 @@ function likes(names) {
 
 
 //# 3 
+function findUniq(arr) {
+    let com = arr.shift()
+    return arr.includes(com) ? Number(arr.filter(char => char !== com).join()) : com
+}
 
+/*
+2-AM Idea:
+instead of creating an object as a frequency counter...
+what if we made a rule that takes the 1st element, remove it from the array, and then compares it to the rest of the array, 
 
+we isolate that 1st element with .shift()
+compare the shifted element to the rest of the array
+if the array doesn't contain it, return it
+if the array contains it, we just return any value in the array that isn't equal to it
+*/
+
+//This code falls short when up against ball point numbers or Giant Numbers.
+
+//Edit: I just used `Number()` instead of `parseInt()` since they aren't Integers😂😂🤦🏾‍♂️
 
 //# 4
 
