@@ -80,6 +80,19 @@ function findOutlier(integers){
 
 
 //# 5
+function duplicateCount(text){
+    let obj =  {}
+    text = text.toLowerCase().split('')
+    let duplicates = []
+    for(char of  text){
+      char in obj ? obj[char] ++ : obj[char] = 1
+    }
+    for( letter in obj){
+        obj[letter] > 1 ? duplicates[duplicates.length] = letter : false
+    }
+   return duplicates.length
+}
+
 
 
 
