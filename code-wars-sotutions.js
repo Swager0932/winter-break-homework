@@ -61,7 +61,21 @@ if the array contains it, we just return any value in the array that isn't equal
 //Edit: I just used `Number()` instead of `parseInt()` since they aren't Integers😂😂🤦🏾‍♂️
 
 //# 4
+function findOutlier(integers){
+    return Math.abs(integers[0]%2) === Math.abs(integers[1]%2) ? Number(integers.filter(elem => Math.abs(elem%2) !== Math.abs(integers[0]%2)).join()) : Math.abs(integers[0]%2) === Math.abs(integers[2]%2) ? Number(integers[1]) : integers[0]
+}
 
+//The Extended version of this code is below
+function findOutlier(integers){
+    if( Math.abs(integers[0]%2) === Math.abs(integers[1]%2) ){
+        console.log('test') 
+        return Number(integers.filter(elem => Math.abs(elem%2) !== Math.abs(integers[0]%2)).join())
+    } 
+    else if(Math.abs(integers[0]%2) === Math.abs(integers[2]%2)){
+        return Number(integers[1])
+    }
+    else{return integers[0]}
+}
 
 
 
