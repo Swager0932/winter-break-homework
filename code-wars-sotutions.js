@@ -84,7 +84,7 @@ function duplicateCount(text){
     let obj =  {}
     text = text.toLowerCase().split('')
     let duplicates = []
-    for(char of  text){
+    for(char of text){
       char in obj ? obj[char] ++ : obj[char] = 1
     }
     for( letter in obj){
@@ -98,20 +98,43 @@ function duplicateCount(text){
 
 
 //# 6
-
+function moveZeros(arr) {
+    let count = arr.filter(el => el === 0)
+    let lol = arr.filter(num => num !== 0)
+    return lol.concat(count)
+}
 
 
 
 //# 7
+function pigIt(str){
+    str = str.split(' ')
+    let nStr = []
+    for(word of str){
+        word = word.split('')
+        let first = word.shift()
+        let ay = [first,"a","y"]
+        nStr[nStr.length] = word.concat(ay).join('')
+    }
+    for(let i = 0; i < nStr.length; i++){
+        /([^a-zA-Z])/g.test(nStr[i].slice(0,1)) ? nStr[i] = nStr[i].slice(0,1) : false
+    }
+    return ( nStr.join(' '))
+}
+explination 
+
+
+
+
 
 
 // Bonus Questions I did because It started giving me random questions and I kept doing then unknowingly 😐😐😐
 
 //Exhibit A
-const arrayDiff = (a, b) => a.filter(char => !b.includes(char) ? char : false)
+const arrayDiff = (a, b) => a.filter(char => !b.includes(char))// ? char : false)
 
-/*
-The extended (and more readable) version of this is:
+
+//The extended (and more readable) version of this is:
 
 function arrayDiff(a, b) {
     let c = a.filter((char) =>{
@@ -122,6 +145,7 @@ function arrayDiff(a, b) {
     return c
 }
 
+/*
 What this code does is creates a new array, `c` with the .filter method
   The rule within this filter method is to check if the current element is included within the `b` array
   If it is, it is filtered out.
