@@ -121,7 +121,6 @@ function pigIt(str){
     }
     return ( nStr.join(' '))
 }
-explination 
 
 
 

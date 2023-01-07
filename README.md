@@ -19,4 +19,6 @@ When you are done with ALL problems:
 
 Paste your URL HERE:
 
+https://www.codewars.com/users/Swager0932/completed
+
 Submit the URL for this Github Repo to Canvas
