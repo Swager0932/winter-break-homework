@@ -23,7 +23,6 @@ function solution(number){
   */
 
 
-
 //# 2
 function likes(names) {
     if(names.length === 0){return "no one likes this"}
@@ -69,6 +68,7 @@ if the array contains it, we just return any value in the array that isn't equal
 
 //Edit: I just used `Number()` instead of `parseInt()` since they aren't Integers😂😂🤦🏾‍♂️
 
+
 //# 4
 function findOutlier(integers){
     return Math.abs(integers[0]%2) === Math.abs(integers[1]%2) ? Number(integers.filter(elem => Math.abs(elem%2) !== Math.abs(integers[0]%2)).join()) : Math.abs(integers[0]%2) === Math.abs(integers[2]%2) ? Number(integers[1]) : integers[0]
@@ -87,8 +87,21 @@ function findOutlier(integers){
 }
 
 /*
+The way this code works is slightly weird:
 
+1)  We are using `integers[0]%2` to check if the 1st element of the given array is `odd` or `even`
 
+  1.33) We are checking if the second element is also matching with the odd/even "orientation" of the 1st, the reason being that if 2 elements in this array of a MINIMUM of 3 element array are the same orientation, then that must me the leading one.
+
+    1.66) Knowing what we know from the previous step all we have to do is find an element in the array that does share the same orientation as the 1st one, and we know that its the outlier ;P
+
+NOTE: The 1st if statement takes into account that the outlier exist outside of the 1st and 2nd element
+  NOTE 2.0: The Math.abs() is there because when you use mod(%) on negative numbers you will get a negative number back. -1||-0 ≠ 1||0 so I had to just make the4 result from mod absolute.
+
+2) The second if statement works similarly, except this one accounts for if the 2nd element is the outlier, since we have already eleminated the possibility of everything past the 2nd element with the last line of code(leaving us with just the 1st and 2nd as remainding posibilities), we are checking the 1st and 3rd element's orientation to see if they match.
+  2.5) If element 1 and 3's orientation match then we know that their orientation is the main one in this array and that the 2nd element has to be the outlier
+
+3) If it isn't the 3rd element upward, and its not 2, its 1 😐😐👍🏾
 */
 
 
