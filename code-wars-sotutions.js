@@ -34,7 +34,16 @@ function likes(names) {
 }
 
 /*
+The code above works as so:
+1. It first checks if the length of the array `names` is 0, if so it will return "no one likes this", since nobody has popped up in the array
 
+2. If the previous condition isn't true, it checks if the length of the array `names` is 1, if so it wil return the name of the person followed with "likes this" eg: "Gonzalo likes this"
+
+3. If the previous condition isn't true, it Checks if the length of the array `names` is 2, if so it wil return the names of those two people (seperated with an "and") followed by a "like this" eg: "Gonzalo and Itzel like this"
+
+4. If the previous condition isn't true, it Checks if the length of the array `names` is 3, if so it wil return the names of those three people seperating the first two with a "," and the last two with an "and" followed by a "like this" eg: "Gonzalo, Itzel, and Laura like this"
+
+5. If the previous condition isn't true it simply returns the names of the first 2 names in the array followed by a number of how many other people liked it. eg: "Gonzalo, Itzel and 67 others like this"
 
 */
 
@@ -77,6 +86,10 @@ function findOutlier(integers){
     else{return integers[0]}
 }
 
+/*
+
+
+*/
 
 
 //# 5
@@ -93,7 +106,10 @@ function duplicateCount(text){
    return duplicates.length
 }
 
+/*
 
+
+*/
 
 
 
@@ -103,6 +119,11 @@ function moveZeros(arr) {
     let lol = arr.filter(num => num !== 0)
     return lol.concat(count)
 }
+
+/*
+
+
+*/
 
 
 
@@ -122,7 +143,10 @@ function pigIt(str){
     return ( nStr.join(' '))
 }
 
+/*
 
+
+*/
 
 
 
